@@ -51,7 +51,7 @@ function playSound(sound, silent) {
 
 function audioRouting(data) {
     context.decodeAudioData(data, function(buffer){
-        source = context.createBufferSource(); // Create sound source
+        source = context.createBufferSource(2, 22050, 44100); // Create sound source
         myBuffer = buffer
         source.buffer = myBuffer; // Add buffered data to object
         source.connect(context.destination); // Connect sound source to output
